@@ -1,0 +1,79 @@
+<section id="projects">
+  <h1 style="text-align:center; color:white;">Projects</h1>
+  <div class="projects-container">
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Project 1">
+      <h3>Website Sekolah</h3>
+      <p>HTML, CSS, Javascript AOS</p>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Project 2">
+      <h3>Company Profile</h3>
+      <p>HTML, CSS, Swiper, Lightbox</p>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Project 3">
+      <h3>Portfolio Design</h3>
+      <p>ReactJS, TailwindCSS</p>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Project 4">
+      <h3>Web Course</h3>
+      <p>Bootstrap 5</p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  body {
+    background-color: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+
+  #projects {
+    padding: 50px 20px;
+  }
+
+  .projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.05); /* مغبش */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  }
+
+  .card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  .card h3 {
+    margin: 10px 0 5px;
+    color: silver;
+  }
+
+  .card p {
+    font-size: 14px;
+    color: #bbb;
+  }
+</style>
