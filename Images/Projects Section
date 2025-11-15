@@ -1,0 +1,9 @@
+<div class="grid-3">
+  <div class="card img-card"><img src="images/Project1.png"><div class="overlay"><h5 class="font-bold text-lg">Project 1</h5><p>App Design</p></div></div>
+  <div class="card img-card"><img src="images/Project2.png"><div class="overlay"><h5 class="font-bold text-lg">Project 2</h5><p>Product Launch</p></div></div>
+  <div class="card img-card"><img src="images/Project3.png"><div class="overlay"><h5 class="font-bold text-lg">Project 3</h5><p>Website Launch</p></div></div>
+  <div class="card img-card"><img src="images/Project4.png"><div class="overlay"><h5 class="font-bold text-lg">Project 4</h5><p>eBook Design</p></div></div>
+  <div class="card img-card"><img src="images/Project5.png"><div class="overlay"><h5 class="font-bold text-lg">Project 5</h5><p>App Update</p></div></div>
+  <div class="card img-card"><img src="images/Project6.png"><div class="overlay"><h5 class="font-bold text-lg">Project 6</h5><p>Online Ordering</p></div></div>
+  <div class="card img-card"><img src="images/Project7.png"><div class="overlay"><h5 class="font-bold text-lg">Project 7</h5><p>Notification System</p></div></div>
+</div>
