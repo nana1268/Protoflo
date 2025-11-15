@@ -1,79 +1,153 @@
-<section id="projects">
-  <h1 style="text-align:center; color:white;">Projects</h1>
-  <div class="projects-container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fatimah's Portfolio</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<style>
+body { overflow-x: hidden; scroll-behavior: smooth; font-family:sans-serif; background:#0f172a;}
+body::before {
+  content:"";
+  position: fixed; top:0; left:0; width:100%; height:100%;
+  background: linear-gradient(270deg, #0f172a, #1e293b, #0f172a);
+  background-size: 600% 600%;
+  animation: gradientBG 20s ease infinite;
+  z-index:-1;
+}
+@keyframes gradientBG { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
 
-    <div class="card">
-      <img src="https://via.placeholder.com/300x200" alt="Project 1">
-      <h3>Website Sekolah</h3>
-      <p>HTML, CSS, Javascript AOS</p>
-    </div>
+.hero-text span { text-shadow: 0 0 12px #0d9488,0 0 20px #14b8a6; }
 
-    <div class="card">
-      <img src="https://via.placeholder.com/300x200" alt="Project 2">
-      <h3>Company Profile</h3>
-      <p>HTML, CSS, Swiper, Lightbox</p>
-    </div>
+.card {
+  background: rgba(31,41,55,0.9);
+  border-radius: 1rem; padding:1rem; margin-bottom:1.5rem; text-align:center;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  opacity:0; transform:translateY(50px);
+}
+.card:hover { transform: translateY(-10px) scale(1.05) rotateY(6deg); box-shadow: 0 20px 50px rgba(20,184,166,0.5); }
 
-    <div class="card">
-      <img src="https://via.placeholder.com/300x200" alt="Project 3">
-      <h3>Portfolio Design</h3>
-      <p>ReactJS, TailwindCSS</p>
-    </div>
+.img-card { position:relative; border-radius:0.5rem; overflow:hidden; cursor:pointer; margin-bottom:1rem; }
+.img-card img { width:100%; border-radius:0.5rem; transition: transform 0.5s ease, filter 0.5s ease; }
+.img-card:hover img { transform: scale(1.08) translateZ(40px); filter: brightness(1.3) drop-shadow(0 0 20px #14b8a6); }
 
-    <div class="card">
-      <img src="https://via.placeholder.com/300x200" alt="Project 4">
-      <h3>Web Course</h3>
-      <p>Bootstrap 5</p>
-    </div>
+.overlay {
+  position:absolute; top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.8); color:white; display:flex;
+  flex-direction:column; justify-content:center; align-items:center;
+  opacity:0; transform: translateY(-20px);
+  transition: all 0.5s ease;
+  padding:1rem; text-align:center;
+}
+.img-card:hover .overlay { opacity:1; transform: translateY(0); }
 
-  </div>
+h3 { text-shadow: 0 0 12px #0d9488,0 0 18px #14b8a6; }
+
+.tech-card { 
+  width:70px; height:70px; display:flex; flex-direction:column; justify-content:center; align-items:center; 
+  font-size:0.7rem; color:white; margin:0.3rem; border-radius:0.5rem; 
+  background:rgba(31,41,55,0.9); transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.6s ease; 
+  opacity:0;
+}
+.tech-card img { width:40px; height:40px; margin-bottom:4px; }
+.tech-card.show { opacity:1; }
+.tech-card:hover { transform: scale(1.1); box-shadow: 0 10px 25px rgba(20,184,166,0.5); }
+
+.grid-3 { display:grid; grid-template-columns: repeat(3, 1fr); gap:1rem; }
+.flex-wrap { display:flex; flex-wrap:wrap; justify-content:center; }
+
+button { cursor:pointer; }
+</style>
+</head>
+<body class="text-white">
+
+<!-- Header -->
+<header class="fixed w-full bg-gray-800 shadow-md z-50">
+<nav class="container mx-auto flex justify-between items-center p-4">
+<h1 class="text-xl font-bold text-teal-400">Portfolio</h1>
+<ul class="flex gap-6">
+<li><a href="#home" class="hover:text-teal-300 transition">Home</a></li>
+<li><a href="#about" class="hover:text-teal-300 transition">About</a></li>
+<li><a href="#projects" class="hover:text-teal-300 transition">Projects</a></li>
+<li><a href="#achievements" class="hover:text-teal-300 transition">Achievements</a></li>
+<li><a href="#books" class="hover:text-teal-300 transition">Books</a></li>
+<li><a href="#techstack" class="hover:text-teal-300 transition">Tech Stack</a></li>
+<li><a href="#contact" class="hover:text-teal-300 transition">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<!-- Hero Section -->
+<section id="home" class="h-screen flex flex-col justify-center items-center text-center px-6">
+<h2 class="text-3xl md:text-5xl font-bold mb-4 hero-text"><span>Welcome</span> to my Portfolio Website</h2>
+<p class="text-lg md:text-xl mb-6 hero-text"><span># Ready to Innovate</span> | Frontend Developer | Network & Telecom Student</p>
+<a href="#about" class="bg-teal-500 px-6 py-3 rounded-lg text-white hover:bg-teal-600 transition hero-text">Explore More</a>
 </section>
 
-<style>
-  body {
-    background-color: #111;
-    color: white;
-    font-family: Arial, sans-serif;
-  }
+<!-- About Section -->
+<section id="about" class="container mx-auto py-20 px-6 flex flex-col md:flex-row items-center gap-10">
+<img src="https://raw.githubusercontent.com/username/fatimah-portfolio/main/IMG-8210.jpg" alt="Profile" class="rounded-full shadow-lg w-36 h-36 object-cover about-img">
+<div class="about-text">
+<h3 class="text-3xl font-bold mb-4">About Me</h3>
+<p class="text-gray-300 mb-4">
+Hi, I'm <span class="text-teal-400 font-semibold">Fatimah Ibrahim</span>, a UI Developer and Network & Telecom student passionate about creating innovative and practical tech solutions.
+</p>
+<a href="https://drive.google.com/uc?export=view&id=1lrMTcvbMeLRmag5ax_u8dXdibgBvQhLc" target="_blank" class="bg-teal-500 px-5 py-2 rounded-lg hover:bg-teal-600 transition">Download CV</a>
+</div>
+</section>
 
-  #projects {
-    padding: 50px 20px;
-  }
+<!-- Projects Section -->
+<section id="projects" class="container mx-auto py-20 px-6">
+<h3 class="text-3xl font-bold mb-6 text-center">&lt; Projects &gt;</h3>
+<div class="grid-3">
+<div class="card img-card"><img src="https://raw.githubusercontent.com/username/fatimah-portfolio/main/project1.png"><div class="overlay"><h5 class="font-bold text-lg">Project 1</h5><p>App Design</p></div></div>
+<div class="card img-card"><img src="https://raw.githubusercontent.com/username/fatimah-portfolio/main/project2.png"><div class="overlay"><h5 class="font-bold text-lg">Project 2</h5><p>Product Launch</p></div></div>
+<div class="card img-card"><img src="https://raw.githubusercontent.com/username/fatimah-portfolio/main/project3.png"><div class="overlay"><h5 class="font-bold text-lg">Project 3</h5><p>Website Launch</p></div></div>
+</div>
+</section>
 
-  .projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
-  }
+<!-- Tech Stack Section -->
+<section id="techstack" class="container mx-auto py-20 px-6 text-center">
+<h3 class="text-3xl font-bold mb-6">Tech Stack</h3>
+<button id="tech-btn" class="bg-teal-500 px-4 py-2 rounded-lg hover:bg-teal-600 transition">Show Skills</button>
+<div id="tech-list" class="flex flex-wrap justify-center mt-4">
+<div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"><p>HTML</p></div>
+<div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"><p>CSS</p></div>
+<div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"><p>JavaScript</p></div>
+</div>
+</section>
 
-  .card {
-    background: rgba(255, 255, 255, 0.05); /* مغبش */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
-    transition: 0.3s;
-  }
+<!-- Contact Section -->
+<section id="contact" class="bg-gray-800 py-20 px-6">
+<div class="container mx-auto text-center">
+<h3 class="text-3xl font-bold mb-6">Contact</h3>
+<p class="text-gray-300 mb-2"><i class="fas fa-envelope text-teal-400"></i> 
+<a href="mailto:fim946735@gmail.com" class="text-teal-400 hover:underline">fim946735@gmail.com</a></p>
+<p class="text-gray-300 mb-2"><i class="fas fa-phone text-teal-400"></i> 
+<a href="tel:0551486823" class="text-teal-400 hover:underline">0551486823</a></p>
+<p class="text-gray-300 mb-2"><i class="fab fa-linkedin text-teal-400"></i> 
+<a href="https://www.linkedin.com/in/fatima-ibrahim-1b7586344" target="_blank" class="text-teal-400 hover:underline">LinkedIn Profile</a></p>
+</div>
+</section>
 
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-  }
+<!-- Footer -->
+<footer class="bg-gray-900 py-6 text-center text-gray-500">&copy; 2025 Fatimah Ibrahim | All Rights Reserved</footer>
 
-  .card img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
+<script>
+const cards = document.querySelectorAll('.card');
+const techCards = document.querySelectorAll('.tech-card');
+const techBtn = document.getElementById('tech-btn');
+techBtn.addEventListener('click', ()=>{
+  techCards.forEach(card => card.classList.add('show'));
+});
+window.addEventListener('scroll', ()=>{
+  cards.forEach(card => {
+    const rect = card.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 100){ card.style.opacity = '1'; card.style.transform='translateY(0)'; }
+  });
+});
+</script>
 
-  .card h3 {
-    margin: 10px 0 5px;
-    color: silver;
-  }
-
-  .card p {
-    font-size: 14px;
-    color: #bbb;
-  }
-</style>
+</body>
+</html>
